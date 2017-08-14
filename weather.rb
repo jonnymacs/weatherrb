@@ -8,6 +8,9 @@ class Weather < Sinatra::Base
 
   get '/search' do
 
+    # rack-cache client policy - cache 4 hours
+    expires (Time.now + 14400).httpdate
+
     city = params["query"]
 
     begin
@@ -21,7 +24,7 @@ class Weather < Sinatra::Base
         @city = OpenWeatherMap::CityRepresenter.new(OpenStruct.new).from_hash(result)
         erb :_weather, layout: false
       when 404
-        erb :_no_result, layout: false
+        erb :_no_results, layout: false
       else
         @message = "unknown error"
         erb :_error, layout: false

@@ -3,6 +3,7 @@ $: << "lib"
 
 require 'rubygems'
 require 'rack'
+require 'rack/cache'
 require 'sinatra'
 require 'logger'
 require 'httparty'
@@ -20,9 +21,13 @@ Dir.glob('./lib/**/*.rb').sort.each do |req|
   require req
 end
 
-require './weather'
-
 I18n.load_path += Dir[File.join(settings.root, 'locales', '*.yml')]
 I18n.default_locale = :'en-US'
 
+use Rack::Cache,
+  metastore:    'file:./tmp/cache/rack/meta',
+  entitystore:  'file:./tmp/cache/rack/body',
+  verbose:      true
+
+require './weather'
 run Weather

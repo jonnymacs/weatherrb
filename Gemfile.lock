@@ -11,6 +11,8 @@ GEM
     mustermann (1.0.0)
     puma (3.9.1)
     rack (2.0.3)
+    rack-cache (1.7.0)
+      rack (>= 0.4)
     rack-protection (2.0.0)
       rack
     representable (3.0.4)
@@ -33,8 +35,9 @@ DEPENDENCIES
   i18n
   multi_json
   puma
+  rack-cache
   representable
   sinatra
 
 BUNDLED WITH
-   1.14.6
+   1.15.3
