@@ -1,0 +1,7 @@
+en-US:
+  services:
+    open_weather_map:
+      network:
+        get_weather_by_city_name: "OpenWeather API returned an error response: '%{response}'"
+      client:
+        get_weather_by_city_name: "Client Error retrieving response from open weather map by city: '%{exception}''"

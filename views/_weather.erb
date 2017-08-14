@@ -1,0 +1,12 @@
+<div class="core_data">
+  <div><%= @city.weather["description"] %></div>
+  <div><%= @city.temp %></div>
+</div>
+
+<div id="map"></div>
+<script type="text/javascript">
+  new google.maps.Map(document.getElementById('map'), {
+    zoom: 13,
+    center: {lat: <%= @city.coord["lat"] %>, lng: <%= @city.coord["lon"] %> }
+  });
+</script>
