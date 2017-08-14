@@ -24,6 +24,10 @@ end
 I18n.load_path += Dir[File.join(settings.root, 'locales', '*.yml')]
 I18n.default_locale = :'en-US'
 
+# use a file cache for this excerise.
+# memcached would be the choice if
+# running multiple app instances
+#
 use Rack::Cache,
   metastore:    'file:./tmp/cache/rack/meta',
   entitystore:  'file:./tmp/cache/rack/body',

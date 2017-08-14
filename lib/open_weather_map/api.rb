@@ -1,3 +1,8 @@
+# The OpenWeatherMap::Api inherits HTTParty support
+# from the Serivce::Base class.
+# Currently there is one static class method
+# OpenWeatherMap::Api.get_weather_by_city_name(:cityname)
+#
 module OpenWeatherMap
   class Api < ::Service::Base
 

@@ -6,6 +6,10 @@ class Weather < Sinatra::Base
     erb :index
   end
 
+  # search endpoint accepts a query param
+  # checks rack-cache for the url
+  # if cache is cold, execute a call to open weather api
+  # and render results
   get '/search' do
 
     # rack-cache client policy - cache 4 hours

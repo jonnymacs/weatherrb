@@ -1,3 +1,8 @@
+# Service::Base class
+# extensivle service class providing
+# HTTParty support to subclasses
+# includes a generic response handler
+#
 module Service
   class Base
     include HTTParty
