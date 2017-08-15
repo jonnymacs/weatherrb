@@ -45,6 +45,7 @@ machine.
 Install ruby-2.4.1 (via apt, brew, or rvm)
 gem install bundler
 bundle install
+rake test
 bundle exec puma
 ~~~
 
