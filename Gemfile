@@ -7,3 +7,7 @@ gem 'httparty'
 gem 'multi_json'
 gem 'i18n'
 gem 'representable'
+
+group :test, :development do
+  gem 'rack-test'
+end
